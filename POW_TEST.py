@@ -22,4 +22,4 @@ def mine(prefix: str, difficulty: int) -> None:
 
 if __name__ == "__main__":
     mine("arthur", 4)
-    mine("arthur", 6)
+    mine("arthur", 5)

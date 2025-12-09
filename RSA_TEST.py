@@ -3,11 +3,12 @@
 """
 
 from pathlib import Path
-from cryptography.hazmat.primitives.asymmetric import rsa  # pyright: ignore[reportMissingImports]
-from cryptography.hazmat.primitives import serialization  # pyright: ignore[reportMissingImports]
-from cryptography.hazmat.primitives import hashes  # pyright: ignore[reportMissingImports]
-from cryptography.hazmat.primitives.asymmetric import padding  # pyright: ignore[reportMissingImports]
-from cryptography.hazmat.backends import default_backend  # pyright: ignore[reportMissingImports]
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives.asymmetric.rsa import RSAPrivateKey, RSAPublicKey
+from cryptography.hazmat.backends import default_backend
 
 
 def generate_and_save_keys() -> tuple[Path, Path]:
