@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-contract Bank {
+interface IBank {
+    function withdraw() external;
+}
+
+contract Bank is IBank {
     // 记录每个地址的存款金额
     mapping(address => uint) public balances;
     // 记录存款金额前 3 名的地址
@@ -28,7 +32,7 @@ contract Bank {
     }
 
     // 仅管理员可提取所有 ETH
-    function withdraw() external {
+    function withdraw() external override {
         require(msg.sender == owner, "Only owner can withdraw");
         payable(owner).transfer(address(this).balance);
     }
